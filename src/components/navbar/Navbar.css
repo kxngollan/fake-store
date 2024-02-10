@@ -86,6 +86,7 @@ nav::after {
 
 .nav-icon {
   font-size: 2rem;
+  cursor: pointer;
 }
 
 .mobile {
@@ -154,13 +155,18 @@ nav::after {
   right: 0;
   background-color: antiquewhite;
   width: 60vw;
+  max-width: 600px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-left: 1rem;
-  border-top: 3px solid #000;
-  border-bottom: 3px solid #000;
+  padding-right: 1rem;
+}
+.sideChart-icon {
+  position: absolute;
+  top: 20px;
+  right: 50px;
 }
 
 .sideCart-items {
@@ -168,6 +174,8 @@ nav::after {
   overflow-y: scroll;
   margin: auto;
   width: 90%;
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
 }
 
 .sideCart-item {
@@ -197,6 +205,10 @@ nav::after {
 
 .delete-button:hover {
   background-color: red;
+}
+
+.sideCart-checkout {
+  padding-bottom: 3rem;
 }
 
 @media screen and (max-width: 800px) {

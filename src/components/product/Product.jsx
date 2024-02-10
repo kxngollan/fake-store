@@ -1,7 +1,6 @@
 import { PropTypes } from "prop-types";
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { Link } from "react-router-dom";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import notFound from "../../assets/not-found.jpg";
 import notFoundMobile from "../../assets/not-found-mobile.jpg";
@@ -53,9 +52,11 @@ const Product = (props) => {
         product.id && (
           <>
             <div className="product-image">
-              <Link to={`/product/${product.id}`}>
-                <img src={product.image} alt={product.title} />
-              </Link>
+              <img
+                src={product.image}
+                alt={product.title}
+                className="transparent"
+              />
             </div>
             <div className="product-description">
               <div className="describe">

@@ -35,6 +35,10 @@ a {
   }
 }
 
+img {
+  cursor: pointer;
+}
+
 /* Media query for mobile */
 @media screen and (max-width: 480px) {
   .selection {

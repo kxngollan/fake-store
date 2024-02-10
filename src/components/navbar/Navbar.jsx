@@ -108,8 +108,11 @@ const Navbar = ({ cart, sidenav, sideCart, toggle }) => {
           <div className="overflow" onClick={() => toggle("sideCart")}></div>
           <div className="sideCart-content">
             <div className="sideCart-title">
+              <TiTimes
+                className="nav-icon sideChart-icon"
+                onClick={() => toggle("sideCart")}
+              />
               <h1>Cart</h1>
-              <hr />
             </div>
             <div className="sideCart-items">
               {cart.length > 0 ? (
@@ -135,8 +138,12 @@ const Navbar = ({ cart, sidenav, sideCart, toggle }) => {
               )}
             </div>
             <div className="sideCart-checkout">
-              <h1>Total: {total}</h1>
-              <button type="button">Checkout</button>
+              <h1>
+                Total: <strong>£{total}</strong>
+              </h1>
+              <button type="button" className="finalise">
+                Checkout
+              </button>
             </div>
           </div>
         </div>
