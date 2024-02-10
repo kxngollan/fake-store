@@ -19,6 +19,14 @@ a {
   gap: 30px;
 }
 
+img{
+  mix-blend-mode: multiply;
+}
+
+.normal{
+  mix-blend-mode: normal !important;
+}
+
 @media screen and (max-width: 768px) {
   .selection {
     grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));

@@ -5,11 +5,16 @@ import Catergory from "./components/catergory/Catergory";
 import Home from "./components/Home";
 import "./App.css";
 import Product from "./components/product/Product";
+import { useState } from "react";
 
 function App() {
+  const [cart, setCart] = useState([])
+
+
+
   return (
     <Router>
-      <Navbar />
+      <Navbar cart={cart}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route

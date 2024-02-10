@@ -11,7 +11,6 @@ const Catergory = (props) => {
         `https://fakestoreapi.com/products/category/${props.catergory}`
       );
       const data = await res.json();
-      console.log(data);
       setProducts(data);
     } catch (err) {
       console.log(err);

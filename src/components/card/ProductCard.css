@@ -1,13 +1,22 @@
-.product-card{
-height: 400px;
-width: 200px;
-margin: auto;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+body {
+  background-color: antiquewhite;
 }
 
-.product-card img{
-    width: 10rem;
+.product-card {
+  height: 400px;
+  width: 200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* animation: fadeIn 1s 1.5s ease 1 forwards; */
+  z-index: -1;
+}
+
+.product-card img {
+  width: 10rem;
+  mix-blend-mode: multiply;
+  overflow: clip;
+  z-index: -1;
 }

@@ -2,6 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import notFound from "../../assets/not-found.jpg";
+import notFoundMobile from "../../assets/not-found-mobile.jpg";
 import "./Product.css";
 
 const Product = () => {
@@ -29,7 +31,9 @@ const Product = () => {
 
   if (error) {
     return (
-      <div className="product">
+      <div className="product-error">
+        <img src={notFound} alt=""  className="desktop-error"/>
+        <img src={notFoundMobile} alt="" className="mobile-error" />
         <h1>{error}</h1>
       </div>
     );
