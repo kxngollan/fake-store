@@ -1,0 +1,33 @@
+body{
+  text-align: center;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.selection {
+  display: grid;
+  width: 80%;
+  height: inherit;
+  margin: 2rem auto 0;
+  grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+  justify-content: center;
+  align-items: center;
+  word-wrap: break-word;
+  gap: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .selection {
+    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+  }
+}
+
+/* Media query for mobile */
+@media screen and (max-width: 480px) {
+  .selection {
+    grid-template-columns: 1fr;
+  }
+}

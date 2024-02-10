@@ -1,0 +1,13 @@
+.product-card{
+height: 400px;
+width: 200px;
+margin: auto;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.product-card img{
+    width: 10rem;
+}

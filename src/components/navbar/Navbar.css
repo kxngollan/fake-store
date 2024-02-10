@@ -1,0 +1,148 @@
+nav {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  margin: auto;
+}
+
+nav::after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  background-color: #31303062;
+  height: 3px;
+
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.nav-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nav-home {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-title h1 {
+  color: #ff7e1b;
+  font-size: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: gray;
+  font-size: 1.25rem;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a:hover {
+  color: black;
+}
+.nav-links li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  background-color: #ff7e1b;
+  height: 3px;
+  transition: width 0.3s ease;
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+}
+
+.active-link a {
+  background-color: #ff7e1b;
+  color: #000 !important;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.nav-icon {
+  font-size: 2rem;
+}
+
+.mobile {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.overflow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(128, 128, 128, 0.548);
+}
+
+.mobile-sidenav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 90vh;
+  width: 40vw;
+  background: #fff;
+  padding: 5vh 5vw;
+  z-index: 10;
+}
+
+.sidenav-links {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style: none;
+  font-size: 2rem;
+}
+
+.socials {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sidenav-icon {
+  color: black;
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 800px) {
+  .mobile-nav {
+    display: unset;
+  }
+  .nav-links {
+    display: none;
+  }
+}
