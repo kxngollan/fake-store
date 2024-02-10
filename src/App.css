@@ -1,4 +1,5 @@
 body {
+  background-color: antiquewhite;
   text-align: center;
 }
 
@@ -27,6 +28,10 @@ a {
 @media screen and (max-width: 768px) {
   .selection {
     grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+  }
+
+  .transparent {
+    mix-blend-mode: unset;
   }
 }
 

@@ -5,10 +5,12 @@ import Catergory from "./components/catergory/Catergory";
 import Home from "./components/Home";
 import "./App.css";
 import Product from "./components/product/Product";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [sideCart, setSideCart] = useState(false);
+  const [sidenav, setSidenav] = useState(false);
 
   const addToCart = (productToAdd, amount) => {
     const existingProductIndex = cart.findIndex(
@@ -35,9 +37,34 @@ function App() {
     }
   };
 
+  const toggle = (section) => {
+    if (section === "sidenav") {
+      setSidenav(!sidenav);
+    } else {
+      setSideCart(!sideCart);
+    }
+  };
+
+  useEffect(() => {
+    const images = document.querySelectorAll("img");
+
+    images.forEach((image) => {
+      if (!sidenav && !sideCart) {
+        image.classList.add("transparent");
+      } else {
+        image.classList.remove("transparent");
+      }
+    });
+  }, [sidenav, sideCart]);
+
   return (
     <Router>
-      <Navbar cart={cart} />
+      <Navbar
+        cart={cart}
+        sidenav={sidenav}
+        sideCart={sideCart}
+        toggle={toggle}
+      />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route

@@ -1,14 +1,14 @@
+import { PropTypes } from "prop-types";
 import { Link, useLocation } from "react-router-dom";
 import Logo from "../../assets/Logo";
 import { FaShoppingCart, FaGithub } from "react-icons/fa";
 import { TiThMenu, TiTimes } from "react-icons/ti";
-import { MdFindInPage } from "react-icons/md";
-
+import { MdFindInPage, MdDelete } from "react-icons/md";
 import "./Navbar.css";
 import { useEffect, useState } from "react";
 
-const Navbar = () => {
-  const [mobNav, setMobNav] = useState(false);
+const Navbar = ({ cart, sidenav, sideCart, toggle }) => {
+  const [total, setTotal] = useState(0);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -30,31 +30,24 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
-    const images = document.querySelectorAll("img");
-
-    images.forEach((image) => {
-      if (!mobNav) {
-        image.classList.add("transparent");
-      } else {
-        image.classList.remove("transparent");
-      }
-    });
-  }, [mobNav]);
+    let tempTotal = 0;
+    for (let i = 0; i < cart.length; i++) {
+      tempTotal += cart[i].price * cart[i].count;
+    }
+    setTotal(parseFloat(tempTotal).toFixed(2));
+  }, [cart]);
 
   const location = useLocation();
 
   return (
     <nav>
       <div className="mobile-nav">
-        <TiThMenu className="nav-icon" onClick={() => setMobNav(!mobNav)} />
-        {mobNav ? (
+        <TiThMenu className="nav-icon" onClick={() => toggle("sidenav")} />
+        {sidenav ? (
           <div className="mobile">
-            <div className="overflow" onClick={() => setMobNav(!mobNav)}></div>
+            <div className="overflow" onClick={() => toggle("sidenav")}></div>
             <div className="mobile-sidenav">
-              <TiTimes
-                className="nav-icon"
-                onClick={() => setMobNav(!mobNav)}
-              />
+              <TiTimes className="nav-icon" onClick={() => toggle("sidenav")} />
               <ul className="sidenav-links">
                 {navLinks.map((link, index) => (
                   <li
@@ -109,9 +102,56 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <FaShoppingCart className="nav-icon" />
+      <FaShoppingCart className="nav-icon" onClick={() => toggle("sideCart")} />
+      {sideCart ? (
+        <div className="sideCart">
+          <div className="overflow" onClick={() => toggle("sideCart")}></div>
+          <div className="sideCart-content">
+            <div className="sideCart-title">
+              <h1>Cart</h1>
+              <hr />
+            </div>
+            <div className="sideCart-items">
+              {cart.length > 0 ? (
+                cart.map((item, index) => {
+                  return (
+                    <div className="sideCart-item" key={index}>
+                      <img src={item.image} alt={item.title} />
+                      <div className="desc">
+                        <h3>{item.title}</h3>
+                        <p>
+                          <strong>£{parseFloat(item.price).toFixed(2)}</strong>{" "}
+                          x {item.count}
+                        </p>
+                      </div>
+                      <button type="button" className="delete-button">
+                        <MdDelete className="delete-icon" />
+                      </button>
+                    </div>
+                  );
+                })
+              ) : (
+                <h1> Cart is empty</h1>
+              )}
+            </div>
+            <div className="sideCart-checkout">
+              <h1>Total: {total}</h1>
+              <button type="button">Checkout</button>
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  cart: PropTypes.array.isRequired,
+  sidenav: PropTypes.bool.isRequired,
+  sideCart: PropTypes.bool.isRequired,
+  toggle: PropTypes.func.isRequired,
 };
 
 export default Navbar;

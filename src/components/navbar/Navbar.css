@@ -7,7 +7,7 @@ nav {
   margin: auto;
 }
 
-nav::after{
+nav::after {
   content: "";
   display: block;
   position: absolute;
@@ -16,7 +16,7 @@ nav::after{
   width: 100%;
   background-color: #31303062;
   height: 3px;
-
+  z-index: -1;
 }
 
 .mobile-nav {
@@ -114,7 +114,7 @@ nav::after{
   top: 0;
   height: 90vh;
   width: 60vw;
-  background: #fff;
+  background: antiquewhite;
   padding: 5vh 5vw;
   z-index: 1000;
 }
@@ -138,11 +138,78 @@ nav::after{
   font-size: 3rem;
 }
 
+.sideCart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.sideCart-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: antiquewhite;
+  width: 60vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 1rem;
+  border-top: 3px solid #000;
+  border-bottom: 3px solid #000;
+}
+
+.sideCart-items {
+  height: 80vh;
+  overflow-y: scroll;
+  margin: auto;
+  width: 90%;
+}
+
+.sideCart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.sideCart-item img {
+  height: 20vh;
+}
+
+.delete-button {
+  height: 3.5rem;
+  width: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background-color: palevioletred;
+  border: 2px solid white;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: red;
+}
+
 @media screen and (max-width: 800px) {
   .mobile-nav {
     display: unset;
   }
   .nav-links {
     display: none;
+  }
+}
+
+@media screen and (max-width: 660) {
+  .sideCart-content {
+    min-width: 300px;
   }
 }

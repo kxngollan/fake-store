@@ -14,7 +14,7 @@ const ProductCard = (props) => {
           />
         </div>
         <h4 className="product-title">{props.product.title}</h4>
-        <h6>£{props.product.price}</h6>
+        <h6>£{parseFloat(props.product.price).toFixed(2)}</h6>
       </div>
     </Link>
   );

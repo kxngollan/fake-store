@@ -6,6 +6,8 @@ This is a fake store that I have developed using vite + react. It was alot of qu
 
 This is my first project using vite + react, it was not too difficult to be honest only thing I can say I struggled with props, it is very diffirent. I had to download prop types to ensure that I could use props.
 
+Another difficult
+
 # Improvements
 
 My next improvements will be, being able to demostrate I can intergrate stripe to allow payment. Create my own server to make API calls.

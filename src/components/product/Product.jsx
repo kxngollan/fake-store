@@ -1,4 +1,4 @@
-import { PropTypes } from 'prop-types';
+import { PropTypes } from "prop-types";
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
@@ -30,23 +30,23 @@ const Product = (props) => {
     fetchData();
   }, [fetchData]);
 
-  const cartAdd =()=>{
-    if (amount >0){
-      props.addToCart(product, amount)
-      setAmount(0)
+  const cartAdd = () => {
+    if (amount > 0) {
+      props.addToCart(product, amount);
+      setAmount(0);
     }
-  }
+  };
 
   if (error) {
     return (
       <div className="product-error">
-        <img src={notFound} alt=""  className="desktop-error"/>
+        <img src={notFound} alt="" className="desktop-error" />
         <img src={notFoundMobile} alt="" className="mobile-error" />
         <h1>{error}</h1>
       </div>
     );
   }
-  
+
   return (
     <div className="product">
       {product ? (
@@ -54,11 +54,7 @@ const Product = (props) => {
           <>
             <div className="product-image">
               <Link to={`/product/${product.id}`}>
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="transparent"
-                />
+                <img src={product.image} alt={product.title} />
               </Link>
             </div>
             <div className="product-description">
@@ -70,7 +66,7 @@ const Product = (props) => {
                   {product.rating?.count} customers
                 </p>
                 <h5>{product.description}</h5>
-                <h4>£{product.price}</h4>
+                <h4>£{parseFloat(product.price).toFixed(2)}</h4>
               </div>
               <div className="add-to-cart">
                 <div className="cart-amount">
@@ -102,7 +98,7 @@ const Product = (props) => {
 };
 
 Product.propTypes = {
-  addToCart: PropTypes.func.isRequired, 
+  addToCart: PropTypes.func.isRequired,
 };
 
 export default Product;
