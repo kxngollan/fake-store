@@ -29,18 +29,16 @@ const Navbar = () => {
     },
   ];
 
+  useEffect(() => {
+    const images = document.querySelectorAll("img");
 
-useEffect(() => {
-  const images = document.querySelectorAll("img");
+    if (mobNav) {
+      images.forEach((image) => image.classList.add("normal"));
+    } else {
+      images.forEach((image) => image.classList.remove("normal"));
+    }
+  }, [mobNav]);
 
-  if (mobNav) {
-    images.forEach((image) => image.classList.add("normal"));
-  } else {
-    images.forEach((image) => image.classList.remove("normal"));
-  }
-}, [mobNav]);
-
-  
   const location = useLocation();
 
   return (

@@ -21,9 +21,6 @@ const Home = () => {
     fetchData();
   }, [fetchData]);
 
-  useEffect(() => {
-    console.log("products are: ", products);
-  }, [products]);
 
   return (
     <div>

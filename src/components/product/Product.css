@@ -96,7 +96,15 @@
         display: none;
     }
 
+    .product-error{
+        align-items: unset;
+    }
+
     .mobile-error{
         display: unset;
+    }
+
+    .product{
+        flex-direction: column;
     }
 }
