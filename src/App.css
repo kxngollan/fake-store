@@ -17,6 +17,7 @@ a {
   align-items: center;
   word-wrap: break-word;
   gap: 30px;
+  z-index: -1;
 }
 
 .transparent {
