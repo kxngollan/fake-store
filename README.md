@@ -1,16 +1,19 @@
 # Description
 
-This is a fake store that I have developed using vite + react. It was alot of quite simple to make and interesting to do. I had a lot of fun making it. I used react
+This is a fake store that I have developed using vite + react and fake store api. It was alot of quite simple to make and interesting to do. I
+
+# Improvements
+
+Adding React-router-dom, I was capable to making it possible to have an individual setup for every product by the id without having to hard code. I have coded stores in the past using photos coded data.
+
+My next improvements will be, being able to demostrate I can intergrate stripe to allow payment. Create my own server either using node or flask to make API calls.
+I can add user login too
 
 # Difficulties
 
 This is my first project using vite + react, it was not too difficult to be honest only thing I can say I struggled with props, it is very diffirent. I had to download prop types to ensure that I could use props.
 
-Another difficult
-
-# Improvements
-
-My next improvements will be, being able to demostrate I can intergrate stripe to allow payment. Create my own server to make API calls.
+Another difficult was with trying to use mix-blend-mode; It didn't work as intended when attemping to work properly on mobile.
 
 # Run locally
 
