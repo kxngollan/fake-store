@@ -5,7 +5,7 @@ import { TiThMenu, TiTimes } from "react-icons/ti";
 import { MdFindInPage } from "react-icons/md";
 
 import "./Navbar.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Navbar = () => {
   const [mobNav, setMobNav] = useState(false);
@@ -29,15 +29,13 @@ const Navbar = () => {
     },
   ];
 
-  useEffect(() => {
-    const images = document.querySelectorAll("img");
+  const images = document.querySelectorAll("img");
 
-    if (mobNav) {
-      images.forEach((image) => image.classList.add("normal"));
-    } else {
-      images.forEach((image) => image.classList.remove("normal"));
-    }
-  }, [mobNav]);
+  if (mobNav) {
+    images.forEach((image) => image.classList.add("normal"));
+  } else {
+    images.forEach((image) => image.classList.remove("normal"));
+  }
 
   const location = useLocation();
 
