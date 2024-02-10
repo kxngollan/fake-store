@@ -106,17 +106,17 @@ nav::after{
 }
 
 .mobile-sidenav {
+  position: absolute;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  position: fixed;
   left: 0;
   top: 0;
   height: 90vh;
-  width: 40vw;
+  width: 60vw;
   background: #fff;
   padding: 5vh 5vw;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .sidenav-links {
