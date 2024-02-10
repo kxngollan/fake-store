@@ -1,4 +1,4 @@
-body{
+body {
   text-align: center;
 }
 
@@ -19,12 +19,8 @@ a {
   gap: 30px;
 }
 
-img{
+.transparent {
   mix-blend-mode: multiply;
-}
-
-.normal{
-  mix-blend-mode: normal !important;
 }
 
 @media screen and (max-width: 768px) {

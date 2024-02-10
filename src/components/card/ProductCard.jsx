@@ -10,7 +10,7 @@ const ProductCard = (props) => {
           <img
             src={props.product.image}
             alt={props.product.title}
-            className="product-img"
+            className="product-img transparent"
           />
         </div>
         <h4 className="product-title">{props.product.title}</h4>
