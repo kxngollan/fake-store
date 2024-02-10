@@ -29,4 +29,8 @@
   .hero img {
     min-height: 25vh;
   }
+
+  .hero-title{
+    top: 15px;
+  }
 }
