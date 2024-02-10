@@ -1,3 +1,4 @@
+import { PropTypes } from 'prop-types';
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
@@ -6,7 +7,7 @@ import notFound from "../../assets/not-found.jpg";
 import notFoundMobile from "../../assets/not-found-mobile.jpg";
 import "./Product.css";
 
-const Product = () => {
+const Product = (props) => {
   const [product, setProduct] = useState({});
   const [amount, setAmount] = useState(0);
   const [error, setError] = useState("");
@@ -29,6 +30,13 @@ const Product = () => {
     fetchData();
   }, [fetchData]);
 
+  const cartAdd =()=>{
+    if (amount >0){
+      props.addToCart(product, amount)
+      setAmount(0)
+    }
+  }
+
   if (error) {
     return (
       <div className="product-error">
@@ -38,7 +46,7 @@ const Product = () => {
       </div>
     );
   }
-
+  
   return (
     <div className="product">
       {product ? (
@@ -46,7 +54,11 @@ const Product = () => {
           <>
             <div className="product-image">
               <Link to={`/product/${product.id}`}>
-                <img src={product.image} alt={product.title} />
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="transparent"
+                />
               </Link>
             </div>
             <div className="product-description">
@@ -75,7 +87,9 @@ const Product = () => {
                     <FaPlus />
                   </button>
                 </div>
-                <button className="finalise">Add to Cart</button>
+                <button className="finalise" onClick={cartAdd}>
+                  Add to Cart
+                </button>
               </div>
             </div>
           </>
@@ -85,6 +99,10 @@ const Product = () => {
       )}
     </div>
   );
+};
+
+Product.propTypes = {
+  addToCart: PropTypes.func.isRequired, 
 };
 
 export default Product;

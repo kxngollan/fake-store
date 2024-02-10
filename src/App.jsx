@@ -8,11 +8,36 @@ import Product from "./components/product/Product";
 import { useState } from "react";
 
 function App() {
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (productToAdd, amount) => {
+    const existingProductIndex = cart.findIndex(
+      (product) => product.id === productToAdd.id
+    );
+
+    if (existingProductIndex !== -1) {
+      const updatedCart = cart.map((product, index) => {
+        if (index === existingProductIndex) {
+          return {
+            ...product,
+            count: product.count + amount,
+          };
+        }
+        return product;
+      });
+      setCart(updatedCart);
+    } else {
+      const newProduct = {
+        ...productToAdd,
+        count: amount,
+      };
+      setCart([...cart, newProduct]);
+    }
+  };
 
   return (
     <Router>
-      <Navbar cart={cart}/>
+      <Navbar cart={cart} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -31,7 +56,10 @@ function App() {
           path="/electronics"
           element={<Catergory catergory={"electronics"} />}
         />
-        <Route path="/product/:productId" element={<Product />} />
+        <Route
+          path="/product/:productId"
+          element={<Product addToCart={addToCart} />}
+        />
       </Routes>
     </Router>
   );
