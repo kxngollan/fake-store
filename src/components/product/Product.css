@@ -119,16 +119,17 @@
     display: none;
   }
 
+  .product {
+    margin-top: 1rem;
+    flex-direction: column;
+    height: unset;
+  }
+
   .product-error {
     align-items: unset;
   }
 
   .mobile-error {
     display: unset;
-  }
-
-  .product {
-    flex-direction: column;
-    height: unset;
   }
 }

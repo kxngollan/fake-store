@@ -14,7 +14,7 @@ const Navbar = ({ cart, sidenav, sideCart, toggle }) => {
     { name: "Home", path: "/" },
     { name: "Men", path: "/men" },
     { name: "Women", path: "/women" },
-    { name: "Jewelery", path: "/jewelery" },
+    { name: "Jewellery", path: "/jewellery" },
     { name: "Electronics", path: "/electronics" },
   ];
 

@@ -68,7 +68,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
-          path="/jewelery"
+          path="/jewellery"
           element={<Catergory catergory={"jewelery"} />}
         />
         <Route
