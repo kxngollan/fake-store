@@ -25,7 +25,11 @@ a {
   mix-blend-mode: multiply;
 }
 
-@media screen and (max-width: 768px) {
+img {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
   .selection {
     grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
   }
@@ -33,10 +37,6 @@ a {
   .transparent {
     mix-blend-mode: unset;
   }
-}
-
-img {
-  cursor: pointer;
 }
 
 /* Media query for mobile */
