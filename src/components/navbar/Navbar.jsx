@@ -7,8 +7,10 @@ import { MdFindInPage, MdDelete } from "react-icons/md";
 import "./Navbar.css";
 import { useEffect, useState } from "react";
 
-const Navbar = ({ cart, sidenav, sideCart, toggle }) => {
+const Navbar = ({ cart }) => {
   const [total, setTotal] = useState(0);
+  const [sideCart, setSideCart] = useState(false);
+  const [sidenav, setSidenav] = useState(false);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -39,6 +41,27 @@ const Navbar = ({ cart, sidenav, sideCart, toggle }) => {
 
   const location = useLocation();
 
+  useEffect(() => {
+    const images = document.querySelectorAll("img");
+
+    images.forEach((image) => {
+      if (!sidenav && !sideCart) {
+        image.classList.add("transparent");
+      } else {
+        image.classList.remove("transparent");
+      }
+      console.log(location.pathname);
+    });
+  }, [sidenav, sideCart, location.pathname]);
+
+  const toggle = (section) => {
+    if (section === "sidenav") {
+      setSidenav(!sidenav);
+    } else {
+      setSideCart(!sideCart);
+    }
+  };
+
   return (
     <nav>
       <div className="mobile-nav">
@@ -56,7 +79,9 @@ const Navbar = ({ cart, sidenav, sideCart, toggle }) => {
                       link.path === location.pathname ? "active-link" : ""
                     }
                   >
-                    <Link to={link.path}>{link.name}</Link>
+                    <Link to={link.path} onClick={() => setSidenav(false)}>
+                      {link.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -119,7 +144,11 @@ const Navbar = ({ cart, sidenav, sideCart, toggle }) => {
                 cart.map((item, index) => {
                   return (
                     <div className="sideCart-item" key={index}>
-                      <img src={item.image} alt={item.title} />
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="clear"
+                      />
                       <div className="desc">
                         <h3>{item.title}</h3>
                         <p>
@@ -156,9 +185,6 @@ const Navbar = ({ cart, sidenav, sideCart, toggle }) => {
 
 Navbar.propTypes = {
   cart: PropTypes.array.isRequired,
-  sidenav: PropTypes.bool.isRequired,
-  sideCart: PropTypes.bool.isRequired,
-  toggle: PropTypes.func.isRequired,
 };
 
 export default Navbar;

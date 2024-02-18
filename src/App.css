@@ -33,10 +33,6 @@ img {
   .selection {
     grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
   }
-
-  .transparent {
-    mix-blend-mode: unset;
-  }
 }
 
 /* Media query for mobile */

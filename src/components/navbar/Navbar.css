@@ -211,6 +211,10 @@ nav::after {
   padding-bottom: 3rem;
 }
 
+.clear {
+  mix-blend-mode: multiply;
+}
+
 @media screen and (max-width: 800px) {
   .mobile-nav {
     display: unset;
