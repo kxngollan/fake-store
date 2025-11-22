@@ -1,36 +1,36 @@
-# Description
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-This is a fake store that I have developed using vite + react and fake store api. It was alot of quite simple to make and interesting to do. I
+## Getting Started
 
-# Improvements
+First, run the development server:
 
-Adding React-router-dom, I was capable to making it possible to have an individual setup for every product by the id without having to hard code. I have coded stores in the past using photos coded data.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-My next improvements will be, being able to demostrate I can intergrate stripe to allow payment. Create my own server either using node or flask to make API calls.
-I can add user login too
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# Difficulties
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This is my first project using vite + react, it was not too difficult to be honest only thing I can say I struggled with props, it is very diffirent. I had to download prop types to ensure that I could use props.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Another difficult was with trying to use mix-blend-mode; It didn't work as intended when attemping to work properly on mobile.
+## Learn More
 
-# Run locally
+To learn more about Next.js, take a look at the following resources:
 
-# Get repo
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-git clone https://github.com/kxngollan/fake-store
-cd fake-store
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-# Download Dependencies
+## Deploy on Vercel
 
-npm install
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-#npm run build
-
-# React + Vite
-
--[prop-types](https://www.npmjs.com/package/prop-types)
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh -[FakeStoreAPI](https://fakestoreapi.com/) -[React-icons](https://react-icons.github.io/react-icons/) -[React-Router-Dom](https://reactrouter.com/en/main)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
